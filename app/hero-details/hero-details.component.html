@@ -1,0 +1,14 @@
+<div class="card" *ngIf="hero" >
+	<div class="card-body" >
+		<h4 class="card-title">edit hero:</h4>
+		<div class="card-text" >
+			<input type="text" [(ngModel)]="hero.name" />  
+			<input type="text" [(ngModel)]="hero.points"  /> 
+		</div>
+		<div>
+			<span > {{hero.name}} </span>  
+			<span class="badge badge-primary" > {{hero.points}} </span>
+		</div>
+		<a class="btn btn-primary" role="button" href="#" (click)="ok()">OK</a>
+	</div>
+</div>
