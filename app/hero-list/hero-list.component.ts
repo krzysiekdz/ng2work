@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Model } from '../model';
 import { HeroService } from '../hero.service';
 
@@ -40,6 +40,14 @@ export class HeroListComponent implements OnInit {
     copyHeroes() {
       this.model.copyHeroes();
       this.unselectHero();
+    }
+
+    ok():void {
+      this.unselectHero();
+    }
+
+    ngOnChanges(s) {
+      console.log(s);
     }
 
     //przekazac do hero-details metode unset

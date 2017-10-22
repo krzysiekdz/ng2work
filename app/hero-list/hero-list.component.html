@@ -10,7 +10,7 @@
 			</ul>
 		</div>
 		<div class="col-5">
-			<hero-details [hero]="selectedHero" [actions]="getModel()" ></hero-details> <!-- przekazanie obiektu do komponentu nizej-pojawia sie zaleznosc: rodzic-dziecko -->
+			<hero-details [hero]="selectedHero" [actionok]="unselectHero.bind(this)" [parent]="this" ></hero-details> <!-- przekazanie obiektu do komponentu nizej-pojawia sie zaleznosc: rodzic-dziecko -->
 			<a (click)="sortHeroesAsc()" class="btn btn-secondary" href="#"  role="button" >sort heroes +</a>
 			<div></div>
 			<a (click)="sortHeroesDesc()" class="btn btn-secondary" href="#"  role="button" >sort heroes -</a>

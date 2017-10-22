@@ -36,7 +36,12 @@ export class HeroService {
 	}
 
 	copyHeroes() {
-		
+		var h=model.heroes;
+		for(var i in h) {
+			h[i].id=10+h[i].id;
+			h[i].name='b'+h[i].name;
+			h[i].points=0.5*h[i].points;
+		}
 	}
 
 	getBestHeroes($count) {
