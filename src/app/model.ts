@@ -13,7 +13,7 @@ var heroes:Hero[] = [
 ];
 
 const model = {
-	heroes:heroes,
+	heroes:null,
 	//ustawianie innych pól
 };
 
@@ -21,6 +21,16 @@ export class Model {
 	private model=model;
 
 	constructor() {
+	}
+
+	fetchHeroes():void {
+		new Promise(function(resolve, reject) {
+			setTimeout(function() {
+				resolve(heroes);
+			}, 2000);
+		})
+		.then(function(results) {model.heroes=results;})
+		;
 	}
 
 	getHeroes(): Hero[] {
@@ -58,6 +68,7 @@ export class Model {
 	}
 
 	getBestHeroes($count) {//kopiuje model, sortuje i zwraca posortowany, jednak bez zmiany modelu glownego
+		if(model.heroes===null) return [];
 		var h=model.heroes.slice(0);
   		h.sort(function(a,b){return  b.points - a.points;})
   		return h.slice(0, $count);

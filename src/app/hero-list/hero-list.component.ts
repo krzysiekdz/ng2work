@@ -17,6 +17,11 @@ export class HeroListComponent implements OnInit {
   	}
 
   	ngOnInit() {
+      // var self=this;
+      // this.model.getHeroes().then(function(h) {
+      //   self.heroes=h;
+      // });
+      this.model.fetchHeroes();
   	}
 
   	selectHero(hero):void {

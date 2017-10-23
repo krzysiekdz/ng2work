@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { Model } from '../model';
 import { HeroService } from '../hero.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dashboard',
@@ -12,18 +13,22 @@ export class DashboardComponent implements OnInit {
 
 	// heroes: Hero[];
 
-  	constructor(private model: HeroService) { 
+  	constructor(private model: HeroService, private router: Router) { 
   		console.log('constructor dash');
   		// this.getBestHeroes();
   	}
 
   	ngOnInit() {
-  		console.log('init dash');
+  		this.model.fetchHeroes();
   		// this.getBestHeroes();
   	}
 
     getBestHeroes() {
       return this.model.getBestHeroes(4);
+    }
+
+    goToDetails() {
+      this.router.navigate(['/details', 2]);
     }
 
   	// getBestHeroes() {

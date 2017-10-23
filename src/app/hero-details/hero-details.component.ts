@@ -32,27 +32,3 @@ export class HeroDetailsComponent implements OnInit {
 
 }
 
-// obietnice tutorial
-
-console.log(1);
-function getSomething() {
-  console.log(2);
-  return new Promise(function(resolve, reject) {
-    console.log(3);
-    window.setTimeout(function() {
-      console.log(4);
-      resolve('ala ma kota');
-    }, 5000)
-  });
-}
-
-getSomething()
-// .then(function(res) {console.log(5, res); return 101;})
-// .then(function(res) {console.log(6, res)})
-.then(function(res) { 
-  return new Promise(function(resolve, reject) {
-    window.setTimeout(function(){console.log(5, res); resolve('102');} , 2000);
-  }); 
-})
-.then(function(res) {console.log(6, res)})
-;
