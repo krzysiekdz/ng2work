@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { Model } from '../model';
-import { HeroService } from '../hero.service';
+import { Hero2Service } from '../hero2.service';
 
 @Component({
   selector: 'hero-list',
@@ -12,7 +12,7 @@ export class HeroListComponent implements OnInit {
 	  heroes;
 	  selectedHero;
 
-  	constructor(private model: HeroService) {
+  	constructor(private model: Hero2Service) {
   		// this.heroes=this.model.getHeroes();//to jest blad-powinienem robic wszystko poprzez model.getHeroes() w widoku
   	}
 

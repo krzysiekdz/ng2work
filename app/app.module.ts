@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -14,6 +15,7 @@ import { BcdComponent } from './bcd/bcd.component';
 
 import { Model } from './model';
 import { HeroService } from './hero.service';
+import { Hero2Service } from './hero2.service';
 
 @NgModule({
   declarations: [
@@ -30,10 +32,12 @@ import { HeroService } from './hero.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpModule,
   ],
   providers: [
     Model,
     HeroService,
+    Hero2Service,
    ],
   bootstrap: [AppComponent]
 })

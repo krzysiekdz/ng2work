@@ -14,11 +14,11 @@
 		<div class="col-5">
 			<!-- <hero-details [hero]="selectedHero" [actionok]="unselectHero.bind(this)" [parent]="this" ></hero-details>  -->
 			<!-- przekazanie obiektu do komponentu nizej-pojawia sie zaleznosc: rodzic-dziecko -->
-			<a (click)="sortHeroesAsc()" class="btn btn-secondary" href="#"  role="button" >sort heroes +</a>
+			<a (click)="sortHeroesAsc()" class="btn btn-secondary" routerLink="../heroes"  role="button" >sort heroes +</a>
 			<div></div>
-			<a (click)="sortHeroesDesc()" class="btn btn-secondary" href="#"  role="button" >sort heroes -</a>
+			<a (click)="sortHeroesDesc()" class="btn btn-secondary"   routerLink="../heroes" >sort heroes -</a>
 			<div></div>
-			<a (click)="copyHeroes()" class="btn btn-secondary" href="#"  role="button" >mul heroes</a>
+			<a (click)="copyHeroes()" class="btn btn-secondary"   routerLink="../heroes" >mul heroes</a>
 		</div>
 	</div>
 </div>
