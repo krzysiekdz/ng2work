@@ -1,8 +1,15 @@
-<div>
-	<a  routerLink="/heroes">Heroes</a>
-	<a  routerLink="/dashboard">Dashboard</a>
-
-	<router-outlet></router-outlet>
-
+<div *ngIf="app_loading" class="m-page-loader m-page-loader--non-block" style="margin-left: -80px; margin-top: -20px;">
+	<div class="m-blockui">
+		<span>
+			Ładowanie strony...
+		</span>
+		<span>
+			<div class="m-loader m-loader--brand"></div>
+		</span>
+	</div>
 </div>
+
+<router-outlet *ngIf="!app_loading" ></router-outlet>
+
+
 
